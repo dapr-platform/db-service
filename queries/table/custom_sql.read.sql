@@ -1,0 +1,1 @@
+select {{ .select_field}} from {{ .from_field}} where {{.where_field}}

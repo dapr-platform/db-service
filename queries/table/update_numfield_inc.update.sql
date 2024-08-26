@@ -1,0 +1,1 @@
+update {{.table_name}} set {{.column_name}}={{.column_name}}+1 where {{ .qstr}}

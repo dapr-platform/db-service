@@ -1,0 +1,44 @@
+migrations = "./migrations"
+debug = true
+version = 2
+# enabling debug mode will disable JWT authorization
+
+[queries]
+location = "./queries"
+
+
+[http]
+port = 6000
+timeout = 60
+# Port 6000 is blocked on windows. You must change to 8080 or any unblocked port
+
+[jwt]
+default = false
+key = "secret"
+algo = "HS256"
+
+[auth]
+enabled = false
+type = "body"
+encrypt = "MD5"
+table = "prest_users"
+username = "username"
+password = "password"
+
+[pg]
+host = "127.0.0.1"
+user = "hyz"
+pass = "hyz2021"
+port = 5432
+database = "DATADB"
+single = true
+ssl.mode = "disable"
+cache = false
+## or used cloud factor
+URL = "postgres://things:things2023@postgresql/thingsdb?sslmode=disable"
+
+[ssl]
+mode = "disable"
+sslcert = "./PATH"
+sslkey = "./PATH"
+sslrootcert = "./PATH"
