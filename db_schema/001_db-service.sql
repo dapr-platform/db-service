@@ -1,5 +1,7 @@
 -- +goose Up
 -- +goose StatementBegin
+CREATE VIEW dual AS
+SELECT 'X'::varchar AS dummy;
 create table f_sql_upsert_err ( err varchar(10240), time timestamp);
 
 CREATE OR REPLACE FUNCTION public.upsert(
@@ -264,6 +266,7 @@ $BODY$;
 
 -- +goose Down
 -- +goose StatementBegin
+drop view if exists dual;
 drop table if exists f_sql_upsert_err ;
 drop function public.batch_upsert_with_ignore;
 drop function public.upsert_with_ignore;
