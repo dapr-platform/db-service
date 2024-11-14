@@ -1,1 +1,1 @@
-CALL refresh_continuous_aggregate('{{.name}}',  '{{.start}}', '{{.end}}');
+CALL refresh_continuous_aggregate('{{.name}}', '{{.start}}', '{{.end}}');
