@@ -5,6 +5,13 @@ import (
 	_ "db-service/prom"
 	"encoding/json"
 	"fmt"
+	"io"
+	"net/http"
+	_ "net/http/pprof"
+	"runtime"
+	"strings"
+	"time"
+
 	"github.com/gorilla/mux"
 	"github.com/gosidekick/migration/v3"
 	"github.com/hitlyl/prest/adapters/postgres"
@@ -17,12 +24,6 @@ import (
 	slog "github.com/structy/log"
 	"github.com/urfave/negroni/v3"
 	_ "go.uber.org/automaxprocs"
-	"io"
-	"net/http"
-	_ "net/http/pprof"
-	"runtime"
-	"strings"
-	"time"
 )
 
 var promHandler = promhttp.Handler()
@@ -260,7 +261,13 @@ func CustomUpsert(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	config.Load()
-
+	slog.Println("config.PrestConf.Debug", config.PrestConf.Debug)
+	slog.Println("config.PrestConf.PGURL", config.PrestConf.PGURL)
+	slog.Println("config.PrestConf.PGDatabase", config.PrestConf.PGDatabase)
+	slog.Println("config.PrestConf.PGUser", config.PrestConf.PGUser)
+	slog.Println("config.PrestConf.PGPassword", config.PrestConf.PGPass)
+	slog.Println("config.PrestConf.PGHost", config.PrestConf.PGHost)
+	slog.Println("config.PrestConf.PGPort", config.PrestConf.PGPort)
 	// Load Postgres Adapter
 	postgres.Load()
 
