@@ -19,7 +19,7 @@ require (
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/clbanning/mxj v1.8.4 // indirect
-	github.com/dapr-platform/common v1.0.0-20241129-1 // indirect
+	github.com/dapr-platform/common v1.0.0-20250221 // indirect
 	github.com/dapr/dapr v1.14.4 // indirect
 	github.com/dapr/go-sdk v1.11.0 // indirect
 	github.com/fsnotify/fsnotify v1.7.0 // indirect

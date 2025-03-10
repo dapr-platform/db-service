@@ -261,6 +261,9 @@ func CustomUpsert(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	config.Load()
+	if config.PrestConf.Debug {
+		slog.DebugMode = true
+	}
 	slog.Println("config.PrestConf.Debug", config.PrestConf.Debug)
 	slog.Println("config.PrestConf.PGURL", config.PrestConf.PGURL)
 	slog.Println("config.PrestConf.PGDatabase", config.PrestConf.PGDatabase)
