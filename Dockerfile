@@ -9,7 +9,7 @@ WORKDIR /app
 COPY go.mod .
 COPY go.sum .
 #RUN go install github.com/swaggo/swag/cmd/swag@v1.16.2
-ENV GOPROXY=https://proxy.golang.com.cn,direct
+#ENV GOPROXY=https://proxy.golang.com.cn,direct
 ENV GOSUMDB=off
 RUN go mod tidy
 COPY . .
